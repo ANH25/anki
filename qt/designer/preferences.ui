@@ -77,6 +77,13 @@
         </widget>
        </item>
        <item>
+        <widget class="QCheckBox" name="editor_autoplay">
+         <property name="text">
+          <string>Automatically play newly attached media in editor</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QCheckBox" name="pastePNG">
          <property name="text">
           <string>Paste clipboard images as PNG</string>

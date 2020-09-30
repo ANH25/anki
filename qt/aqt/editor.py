@@ -762,7 +762,8 @@ to a cloze type first, via 'Notes>Change Note Type'"""
             name = urllib.parse.quote(fname.encode("utf8"))
             return '<img src="%s">' % name
         else:
-            av_player.play_file(fname)
+            if self.mw.pm.profile.get("editor_autoplay", True):
+                av_player.play_file(fname)
             return "[sound:%s]" % html.escape(fname, quote=False)
 
     def urlToFile(self, url: str) -> Optional[str]:

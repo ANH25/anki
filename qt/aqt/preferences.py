@@ -228,6 +228,7 @@ Not currently enabled; click the sync button in the main window to enable."""
         self.form.showPlayButtons.setChecked(self.prof.get("showPlayButtons", True))
         self.form.nightMode.setChecked(self.mw.pm.night_mode())
         self.form.interrupt_audio.setChecked(self.mw.pm.interrupt_audio())
+        self.form.editor_autoplay.setChecked(self.prof.get("editor_autoplay", True))
 
     def updateOptions(self):
         restart_required = False
@@ -245,6 +246,7 @@ Not currently enabled; click the sync button in the main window to enable."""
             restart_required = True
 
         self.mw.pm.set_interrupt_audio(self.form.interrupt_audio.isChecked())
+        self.prof["editor_autoplay"] = self.form.editor_autoplay.isChecked()
 
         if restart_required:
             showInfo(_("Changes will take effect when you restart Anki."))
